@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { Modal } from "./Modal";
 import { Invites } from "./Invites";
 
@@ -15,13 +14,12 @@ export class Root extends Component<{}, State> {
   };
 
   public toggle(opened: boolean) {
-    (this.state as any).opened = opened;
+    this.setState({ opened });
   }
 
   public invite(name: string) {
     this.setState(({ invites }) => {
       invites.push(name);
-
       return { invites };
     });
   }
@@ -29,7 +27,9 @@ export class Root extends Component<{}, State> {
   public render() {
     return (
       <>
-        <button onClick={() => this.toggle(true)}>Open invites list</button>
+        <button onClick={() => this.toggle(true)}>
+          Open list
+        </button>
         <Modal opened={this.state.opened} onClose={() => this.toggle(false)}>
           <Invites
             invites={this.state.invites}
