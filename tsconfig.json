@@ -1,0 +1,23 @@
+{
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "strict": true,
+        "lib": [
+            "dom",
+            "es2015",
+            "es2016",
+            "es2017"
+        ],
+        "jsx": "react",
+        "esModuleInterop": true,
+        "baseUrl": "./",
+        "rootDir": "./",
+        "moduleResolution": "node",
+        "typeRoots": [
+            "./node_modules/@types",
+            "./types"
+        ]
+    }
+}
