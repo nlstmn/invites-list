@@ -15,8 +15,10 @@ export const Invites: FC<Props> = ({ invites, onAdd }) => {
     },
     [setName]
   );
+
   const handleSubmit = useCallback(() => {
     onAdd(name);
+    setName(""); // Reset the name state to an empty string
   }, [name, onAdd]);
 
   useEffect(() => {
