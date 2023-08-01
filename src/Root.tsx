@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Modal } from "./Modal";
 import { Invites } from "./Invites";
+import { LeetCode100DaysChallenge } from "./LeetCode100DaysChallenge"
 
 interface State {
   invites: string[];
@@ -27,6 +28,7 @@ export class Root extends Component<{}, State> {
   public render() {
     return (
       <>
+        <LeetCode100DaysChallenge />
         <button onClick={() => this.toggle(true)}>
           Open list
         </button>
