@@ -52,6 +52,25 @@ export function LeetCode100DaysChallenge() {
     const list2 = new ListNode(5, new ListNode(6, new ListNode(4)));
     addTwoNumbers(list1, list2, 0);
 
+    /* Необходимо написать такую функцию sum,
+    которую можно вызвать сколько угодно раз, и эта функция вернёт
+    сумму аргументов из всех предыдущих вызовов. Например: sum(1)(5)(4) == 10 */
+    function sum(initialValue: any) {
+        let currentSum = initialValue || 0;
+
+        function innerSum(nextValue: any) { // Solved with closures
+            currentSum += nextValue;
+            return innerSum;
+        }
+
+        innerSum.toString = function () {
+            return currentSum;
+        };
+
+        return innerSum;
+    }
+    console.log("Sum func problem => ", sum(1)(5)(4).toString()); // Function chaining
+
     return (
         <>
             <div>test</div>
