@@ -71,6 +71,18 @@ export function LeetCode100DaysChallenge() {
     }
     console.log("Sum func problem => ", sum(1)(5)(4).toString()); // Function chaining
 
+    /* Что выведется в консоле? */
+    const arr: Array<any> = [];
+    let i: any = 0;
+
+    while (i !== 10) {
+        arr[i++] = function () {
+            return i;
+        };
+    }
+
+    console.log("Console array problem => ", arr[3]()); // It will display 3
+
     return (
         <>
             <div>test</div>
