@@ -1,4 +1,4 @@
-import React, { Component, ReactNode } from "react";
+import React, { FC, useState, useCallback, useEffect } from "react";
 
 declare global { // Module scope for global declaration
     interface Array<T> { // T stands for Type
@@ -82,6 +82,22 @@ export function LeetCode100DaysChallenge() {
     }
 
     console.log("Console array problem => ", arr[3]()); // It will display 3
+
+    /* Что не так в этом коде? */
+    const [pageNumber, setPageNumber] = useState(0);
+
+    function getNewPage(pageNumber: any) { }
+    function handleClick() {
+        setPageNumber(pageNumber + 1); // Problem with asynch state update
+        const page = getNewPage(pageNumber);
+    }
+    // Solution
+    function handleClickk() {
+        setPageNumber(prevPageNumber => prevPageNumber + 1);
+    }
+    useEffect(() => {
+        const page = getNewPage(pageNumber); // Now pageNumber is synchronized
+    }, [pageNumber]);
 
     return (
         <>
