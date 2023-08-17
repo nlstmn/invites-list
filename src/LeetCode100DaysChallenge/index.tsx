@@ -88,7 +88,7 @@ export function LeetCode100DaysChallenge() {
 
     function getNewPage(pageNumber: any) { }
     function handleClick() {
-        setPageNumber(pageNumber + 1); // Problem with asynch state update
+        setPageNumber(pageNumber + 1); // Problem with async state update
         const page = getNewPage(pageNumber);
     }
     // Solution
