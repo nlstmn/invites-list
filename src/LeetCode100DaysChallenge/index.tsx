@@ -150,6 +150,10 @@ export function LeetCode100DaysChallenge() {
             console.log('It is not a palindrome');
         }
     }
+    // Note: some tasks are harder - you will need to remove special symbols and characters, spaces
+    // Will need to use regex and .replace() function
+    let str: any;
+    var newString = str.replace(/[^A-Z0-9]/ig, "_");
 
     return (
         <>
