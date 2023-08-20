@@ -99,6 +99,29 @@ export function LeetCode100DaysChallenge() {
         const page = getNewPage(pageNumber); // Now pageNumber is synchronized
     }, [pageNumber]);
 
+    /* Написать функцию convert, которая принимает массив
+    с полем id и возвращает объект, где id уже является ключом */
+    /* Initial array:
+    [
+        { id: 'a', name: 'Alex' },
+        { id: 'b', name: 'Max' }
+    ]
+    */
+    /* Final object:
+    {
+        a: {id: a, name: 'Alex'},
+        b: {id: a, name: 'Max'}
+    }
+    */
+    function convert(data: any) {
+        let result: any = {}
+        for (let i of data) {
+            let res = Object.assign({}, i)
+            result[res.id] = res
+        }
+        return result
+    }
+
     return (
         <>
             <div>test</div>
