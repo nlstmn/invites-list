@@ -122,6 +122,35 @@ export function LeetCode100DaysChallenge() {
         return result
     }
 
+    /* Check if the string is a palindrome - "madam", for example */
+    function checkPalindrome(string: string) { // Using for loop
+        // Find the length of a string
+        const len = string.length;
+        // Loop through half of the string
+        for (let i = 0; i < len / 2; i++) {
+            // Check if first and last string are same
+            if (string[i] !== string[len - 1 - i]) {
+                return 'It is not a palindrome';
+            }
+        }
+        return 'It is a palindrome';
+    }
+
+    function checkPalindrome2(string: string) { // Using built-in functions
+        // Convert string to an array
+        const arrayValues = string.split('');
+        // Reverse the array values
+        const reverseArrayValues = arrayValues.reverse();
+        // Convert array to string
+        const reverseString = reverseArrayValues.join('');
+        if (string == reverseString) {
+            console.log('It is a palindrome');
+        }
+        else {
+            console.log('It is not a palindrome');
+        }
+    }
+
     return (
         <>
             <div>test</div>
