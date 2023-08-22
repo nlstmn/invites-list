@@ -1,4 +1,4 @@
-import React, { FC, useState, useCallback, useEffect } from "react";
+import React, { FC, useState, useCallback, useEffect, useRef } from "react";
 
 declare global { // Module scope for global declaration
     interface Array<T> { // T stands for Type
@@ -154,6 +154,25 @@ export function LeetCode100DaysChallenge() {
     // Will need to use regex and .replace() function
     let str: any;
     var newString = str.replace(/[^A-Z0-9]/ig, "_");
+
+    /* Write usePrevious Hook */
+    function usePrevious(value: any) {
+        const ref = useRef();
+        useEffect(() => {
+            ref.current = value;
+        }, [value]);
+        return ref.current;
+    }
+
+    function MyComponent(props: any) {
+        const { name } = props;
+        const previousName = usePrevious(name);
+        if (name != previousName) {
+            // Do something
+        }
+    }
+
+    /* Convert given set to array */
 
     return (
         <>
