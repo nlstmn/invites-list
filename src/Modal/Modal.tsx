@@ -41,7 +41,7 @@ export class Modal extends Component<Props, State> {
           <div className="modal--content">
             <Close onClick={this.props.onClose} />
 
-            {this.props.children}
+            {/*this.props.children*/}
           </div>
         </div>
       </CSSTransition>
