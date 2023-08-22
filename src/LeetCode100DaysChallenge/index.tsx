@@ -16,14 +16,14 @@ class ListNode { // Writing this because TS doesn't know what is ListNode
 
 export function LeetCode100DaysChallenge() {
 
-    /* Array Prototype Last */
+    /* 1 - Array Prototype Last */
     Array.prototype.last = function () {
         return (
             this.length === 0 ? -1 : this[this.length - 1] // Accessing array using "this"
         )
     }
 
-    /* Two Sum */
+    /* 2 - Two Sum */
     function twoSum(nums: number[], target: number) { // Can be also solved with Hashmaps
 
         let output: number[] = [];
@@ -38,7 +38,7 @@ export function LeetCode100DaysChallenge() {
         }
     }
 
-    /* Add Two Numbers */
+    /* 3 - Add Two Numbers */
     function addTwoNumbers(l1: ListNode | null, l2: ListNode | null, carry: number): ListNode | null { // Linked lists
         if (!l1 && !l2 && !carry) return null;
 
@@ -52,7 +52,7 @@ export function LeetCode100DaysChallenge() {
     const list2 = new ListNode(5, new ListNode(6, new ListNode(4)));
     addTwoNumbers(list1, list2, 0);
 
-    /* Необходимо написать такую функцию sum,
+    /* 4 - Необходимо написать такую функцию sum,
     которую можно вызвать сколько угодно раз, и эта функция вернёт
     сумму аргументов из всех предыдущих вызовов. Например: sum(1)(5)(4) == 10 */
     function sum(initialValue: any) {
@@ -71,7 +71,7 @@ export function LeetCode100DaysChallenge() {
     }
     console.log("Sum func problem => ", sum(1)(5)(4).toString()); // Function chaining
 
-    /* Что выведется в консоле? */
+    /* 5 - Что выведется в консоле? */
     const arr: Array<any> = [];
     let i: any = 0;
 
@@ -83,7 +83,7 @@ export function LeetCode100DaysChallenge() {
 
     console.log("Console array problem => ", arr[3]()); // It will display 3
 
-    /* Что не так в этом коде? */
+    /* 6 - Что не так в этом коде? */
     const [pageNumber, setPageNumber] = useState(0);
 
     function getNewPage(pageNumber: any) { }
@@ -99,7 +99,7 @@ export function LeetCode100DaysChallenge() {
         const page = getNewPage(pageNumber); // Now pageNumber is synchronized
     }, [pageNumber]);
 
-    /* Написать функцию convert, которая принимает массив
+    /* 7 - Написать функцию convert, которая принимает массив
     с полем id и возвращает объект, где id уже является ключом */
     /* Initial array:
     [
@@ -122,7 +122,7 @@ export function LeetCode100DaysChallenge() {
         return result
     }
 
-    /* Check if the string is a palindrome - "madam", for example */
+    /* 8 - Check if the string is a palindrome - "madam", for example */
     function checkPalindrome(string: string) { // Using for loop
         // Find the length of a string
         const len = string.length;
@@ -155,7 +155,7 @@ export function LeetCode100DaysChallenge() {
     let str: any;
     var newString = str.replace(/[^A-Z0-9]/ig, "_");
 
-    /* Write usePrevious Hook */
+    /* 9 - Write usePrevious Hook */
     function usePrevious(value: any) {
         const ref = useRef();
         useEffect(() => {
@@ -172,7 +172,7 @@ export function LeetCode100DaysChallenge() {
         }
     }
 
-    /* Convert given set to array */
+    /* 10 - Convert given set to array */
     let set = new Set(['welcome', 'to', 'GFG']); // Creating new set
     let ar = Array.from(set); // Сonverting to set
     console.log(ar);
