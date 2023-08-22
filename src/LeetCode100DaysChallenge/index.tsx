@@ -173,6 +173,17 @@ export function LeetCode100DaysChallenge() {
     }
 
     /* Convert given set to array */
+    let set = new Set(['welcome', 'to', 'GFG']); // Creating new set
+    let ar = Array.from(set); // Сonverting to set
+    console.log(ar);
+    // Using spread operator
+    let sett = new Set(['GFG', 'JS']); // Input set
+    // let array = [...sett]; // Convert using spread operator
+
+    /* Convert given array to set */
+    var arrr = [55, 44, 65];
+    var settt = new Set(arr);
+    console.log(settt.has(65));
 
     return (
         <>
