@@ -29,7 +29,7 @@ export class Root extends Component<{}, State> {
   public render() {
     return (
       <>
-        {/*<LeetCode100DaysChallenge />*/}
+        <LeetCode100DaysChallenge />
         <button onClick={() => this.toggle(true)}>
           Open list
         </button>

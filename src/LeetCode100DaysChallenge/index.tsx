@@ -153,7 +153,7 @@ export function LeetCode100DaysChallenge() {
     // Note: some tasks are harder - you will need to remove special symbols and characters, spaces
     // Will need to use regex and .replace() function
     let str: any;
-    var newString = str.replace(/[^A-Z0-9]/ig, "_");
+    var newString = str?.replace(/[^A-Z0-9]/ig, "_");
 
     /* 9 - Write usePrevious Hook */
     function usePrevious(value: any) {
@@ -185,9 +185,54 @@ export function LeetCode100DaysChallenge() {
     var settt = new Set(arr);
     console.log(settt.has(65));
 
+    /* 11 - You are working on <UserProfile /> component, where user can update their profile information.
+    What is the correct way to update the user's city of present adress from Melbourne to Sydney? */
+    const userInf = {
+        name: "John",
+        phone: "96543",
+        address: {
+            present: {
+                country: "Australia",
+                city: "Melbourne"
+            },
+            permanent: {
+                country: "India"
+            }
+        }
+    }
+
+    // Solution
+    const [userInfo, setUserInfo] = useState({
+        name: "John",
+        phone: "96543",
+        address: {
+            present: {
+                country: "Australia",
+                city: "Melbourne"
+            },
+            permanent: {
+                country: "India"
+            }
+        }
+    });
+    const updateCity = () => {
+        const updatedUserInfo = {
+            ...userInfo,
+            address: {
+                ...userInfo.address,
+                present: {
+                    ...userInfo.address.present,
+                    city: "Sydney"
+                }
+            }
+        };
+        setUserInfo(updatedUserInfo);
+    };
+
     return (
         <>
             <div>test</div>
+            <button onClick={updateCity}>Update City to Sydney</button>
         </>
     );
 }
