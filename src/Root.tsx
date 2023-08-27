@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Modal } from "./Modal";
 import { Invites } from "./Invites";
 import { LeetCode100DaysChallenge } from "./LeetCode100DaysChallenge"
+import { PartTwo } from "./LeetCode100DaysChallenge/partTwo"
 import Button from '@mui/material/Button';
 
 interface State {
@@ -30,6 +31,7 @@ export class Root extends Component<{}, State> {
     return (
       <>
         <LeetCode100DaysChallenge />
+        <PartTwo />
         <button onClick={() => this.toggle(true)}>
           Open list
         </button>

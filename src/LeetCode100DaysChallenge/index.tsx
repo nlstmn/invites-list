@@ -276,7 +276,7 @@ export function LeetCode100DaysChallenge() {
 
     return (
         <>
-            <div>testt</div>
+            <div>1st Script</div>
             <button onClick={updateCity}>Update City to Sydney</button>
         </>
     );
