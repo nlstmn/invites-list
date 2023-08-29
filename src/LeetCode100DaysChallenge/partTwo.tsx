@@ -6,7 +6,7 @@ export function PartTwo() {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        console.log("OHA! ", count)
+        console.log("Count is: ", count)
     });
 
     return (
