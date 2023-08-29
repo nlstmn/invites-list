@@ -4,6 +4,7 @@ import { Invites } from "./Invites";
 import { LeetCode100DaysChallenge } from "./LeetCode100DaysChallenge"
 import { PartTwo } from "./LeetCode100DaysChallenge/partTwo"
 import Button from '@mui/material/Button';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 interface State {
   invites: string[];
@@ -30,18 +31,39 @@ export class Root extends Component<{}, State> {
   public render() {
     return (
       <>
-        <LeetCode100DaysChallenge />
-        <PartTwo />
-        <button onClick={() => this.toggle(true)}>
-          Open list
-        </button>
-        {/*<Modal opened={this.state.opened} onClose={() => this.toggle(false)}>
-          <Invites
-            invites={this.state.invites}
-            onAdd={this.invite.bind(this)}
-          />
-        </Modal>*/}
-        <Button variant="contained">Hello world</Button>
+        <Router>
+          <>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/challenge">Challenge</Link>
+                </li>
+                <li>
+                  <Link to="/part-two">Part Two</Link>
+                </li>
+              </ul>
+            </nav>
+
+            <Routes>
+              <Route path="/challenge" element={<LeetCode100DaysChallenge />}>
+              </Route>
+              <Route path="/part-two" element={<PartTwo />}>
+              </Route>
+              <Route path="/" element={<Button variant="contained" onClick={() => this.toggle(true)}>Open list</Button>}>
+              </Route>
+            </Routes>
+
+            {/*<Modal opened={this.state.opened} onClose={() => this.toggle(false)}>
+            <Invites
+              invites={this.state.invites}
+              onAdd={this.invite.bind(this)}
+            />
+            </Modal>*/}
+          </>
+        </Router>
       </>
     );
   }
