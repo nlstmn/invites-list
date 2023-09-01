@@ -29,6 +29,7 @@ export class Root extends Component<{}, State> {
   }
 
   public render() {
+    console.log("Test")
     return (
       <>
         <Router>
