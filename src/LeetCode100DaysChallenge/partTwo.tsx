@@ -2,20 +2,18 @@ import React, { FC, useState, useCallback, useEffect, useRef } from "react";
 
 export function PartTwo() {
 
-    console.log("Part Two")
-    const [count, setCount] = useState(0);
+    /* 1 - Generics */
+    const addUID = (obj: object) => {
+        let uid = Math.floor(Math.random() * 100);
+        return { ...obj, uid };
+    }
 
-    useEffect(() => {
-        console.log("Count is: ", count)
-    });
+    let person = addUID({ name: "Liana", age: 28 }); // This is called invoking
+    // console.log(person.name) - Will give error because addUID doesn't know what exactly will exist in object
 
     return (
         <>
             <div>2nd Script</div>
-            <div>
-                <p>Count: {count}</p>
-                <button onClick={() => setCount(count + 1)}>Increment</button>
-            </div>
         </>
     );
 }
