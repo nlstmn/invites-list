@@ -20,6 +20,13 @@ export function PartTwo() {
     let person2 = UIDgenerics({ name: "Didi", age: 35 }); // This is called invoking
     console.log(person2.name)
 
+    // OK, now how to say that I want the passed parameter to be exactly an object?
+    const generType = function <T extends object>(obj: T) { }
+
+    // How to also say that I want the passed parameter to be exactly an object with exact properties inside?
+    const generProperties = function <T extends { name: string }>(obj: T) { }
+    let person3 = generProperties({ name: "Liz", age: 40 }) // You can also pass some extra shit here - like age
+
     return (
         <>
             <div>2nd Script</div>
