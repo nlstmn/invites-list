@@ -27,6 +27,25 @@ export function PartTwo() {
     const generProperties = function <T extends { name: string }>(obj: T) { }
     let person3 = generProperties({ name: "Liz", age: 40 }) // You can also pass some extra shit here - like age
 
+    // With Interfaces
+    interface Resource<T> {
+        uid: number;
+        resourceName: string;
+        dating: T;
+    }
+
+    const person4: Resource<string> = { // Here we specify the type of dating below
+        uid: 1,
+        resourceName: "me",
+        dating: "hello"
+    }
+
+    const person5: Resource<string[]> = {
+        uid: 1,
+        resourceName: "me",
+        dating: ["hello", "bye"]
+    }
+
     return (
         <>
             <div>2nd Script</div>
