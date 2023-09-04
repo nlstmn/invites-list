@@ -3,6 +3,7 @@ import { Modal } from "./Modal";
 import { Invites } from "./Invites";
 import { LeetCode100DaysChallenge } from "./LeetCode100DaysChallenge"
 import { PartTwo } from "./LeetCode100DaysChallenge/partTwo"
+import { Manychat } from "./LeetCode100DaysChallenge/manychat"
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -44,16 +45,18 @@ export class Root extends Component<{}, State> {
                 <li>
                   <Link to="/part-two">Part Two</Link>
                 </li>
+                <li>
+                  <Link to="/manychat">Manychat</Link>
+                </li>
               </ul>
             </nav>
 
             <Routes>
-              <Route path="/challenge" element={<LeetCode100DaysChallenge />}>
-              </Route>
-              <Route path="/part-two" element={<PartTwo />}>
-              </Route>
+              <Route path="/challenge" element={<LeetCode100DaysChallenge />} />
+              <Route path="/part-two" element={<PartTwo />} />
               <Route path="/" element={<Button variant="contained" onClick={() => this.toggle(true)}>Open list</Button>}>
               </Route>
+              <Route path="/manychat" element={<Manychat />} />
             </Routes>
 
             {/*<Modal opened={this.state.opened} onClose={() => this.toggle(false)}>
