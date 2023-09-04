@@ -46,6 +46,24 @@ export function PartTwo() {
         dating: ["hello", "bye"]
     }
 
+    /* 1 - Omit */
+    // It's a Utility type, excludes properties. Opposite of Pick type.
+
+    type User = {
+        firstName: string;
+        lastName: string;
+        age: number;
+    }
+
+    // We could do like this:
+    type User2 = {
+        firstName: string;
+        lastName: string;
+    }
+
+    // But with Omit we will not duplicate types:
+    type User3 = Omit<User, "age">;
+
     return (
         <>
             <div>2nd Script</div>
