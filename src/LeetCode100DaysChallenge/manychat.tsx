@@ -148,7 +148,46 @@ export function Manychat() {
     2. I kept track of completed requests with the completedCount variable and resolve the promise once all requests are completed.
     3. I used a setTimeout loop to continuously check for completed requests and resolve the promise when all requests are done.
     
-    This way the funcrion will start retuning results as soon as the first requests finish, without waiting for all requests to complete. */
+    This way the function will start retuning results as soon as the first requests finish, without waiting for all requests to complete. */
+
+    /* 3 - Write a function that determines if a phrase is a palindrome.
+    This function should be executed with the least number of steps, no using in-built functions at all. */
+
+    function isPalindrome(phrase: string) {
+
+        const isAlphanumeric = (char: string) => { // Helper function to check if a character is alphanumeric
+            return /^[0-9a-zA-Z]+$/.test(char);
+        };
+
+        phrase = phrase.toLowerCase();
+        let left = 0;
+        let right = phrase.length - 1;
+
+        while (left < right) {
+            while (left < right && !isAlphanumeric(phrase[left])) { // Move the left to the right until an alphanumeric character is found
+                left++;
+            }
+
+            while (left < right && !isAlphanumeric(phrase[right])) { // Move the right pointer to the left until an alphanumeric character is found
+                right--;
+            }
+
+            if (phrase[left] !== phrase[right]) return false;
+
+            left++;
+            right--;
+        }
+
+        return true;
+    };
+
+    const phrase1 = "A man,a plan, a canal,Panama";
+    const phrase2 = "race car";
+    const phrase3 = "Hello, World!";
+
+    console.log(isPalindrome(phrase1)); // true
+    console.log(isPalindrome(phrase2)); // true
+    console.log(isPalindrome(phrase3)); // false
 
     return (
         <>
