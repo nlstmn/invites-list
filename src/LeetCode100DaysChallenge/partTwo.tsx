@@ -46,7 +46,7 @@ export function PartTwo() {
         dating: ["hello", "bye"]
     }
 
-    /* 1 - Omit */
+    /* 2 - Omit */
     // It's a Utility type, excludes properties. Opposite of Pick type.
 
     type User = {
@@ -63,6 +63,9 @@ export function PartTwo() {
 
     // But with Omit we will not duplicate types:
     type User3 = Omit<User, "age">;
+
+    /* 1 - Pick */
+    type User4 = Pick<User, "lastName" | "age">; // Second argument can be also a Union, like here
 
     return (
         <>
