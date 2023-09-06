@@ -89,6 +89,37 @@ export function PartTwo() {
     }
     check('[[{asd}]]') // true
 
+    // Using stack
+    function brackets(expression: string) {
+        let stack = [];
+        let current: string;
+        const matchLookup: any = {
+            "(": ")",
+            "[": "]",
+            "{": "}",
+        };
+
+        for (let i = 0; i < expression.length; i++) {
+            current = expression[i];
+
+            if (current === '(' || current === '[' || current === "{") {
+                stack.push(current);
+            } else if (current === ')' || current === ']' || current === "}") {
+                const lastBracket = stack.pop() as string;
+                if (matchLookup[lastBracket] !== current) { // If the stack is empty, .pop() returns undefined, so this expression is still correct
+                    return false; // Terminate immediately - no need to continue scanning the string
+                }
+            }
+        }
+
+        return stack.length === 0; // Any elements mean brackets left open
+    }
+
+    console.log(brackets('(3+{1-1)}')); // false
+    console.log(brackets('{[(3+1)+2]+}')); // true
+    console.log(brackets('[1+1]+(2*2)-{3/3}')); // true
+    console.log(brackets('(({[(((1)-2)+3)-3]/3}-3)')); // false
+
     return (
         <>
             <div>2nd Script</div>
