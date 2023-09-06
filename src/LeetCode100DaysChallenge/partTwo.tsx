@@ -64,8 +64,30 @@ export function PartTwo() {
     // But with Omit we will not duplicate types:
     type User3 = Omit<User, "age">;
 
-    /* 1 - Pick */
+    /* 3 - Pick */
     type User4 = Pick<User, "lastName" | "age">; // Second argument can be also a Union, like here
+
+    /* 4 - Check the sequence of opening and closing brackets in string */
+    function check(expr: string) {
+        const holder = []
+        const openBrackets = ['(', '{', '[']
+        const closedBrackets = [')', '}', ']']
+        for (let letter of expr) {
+            if (openBrackets.includes(letter)) {
+                holder.push(letter)
+            } else if (closedBrackets.includes(letter)) {
+                const openPair = openBrackets[closedBrackets.indexOf(letter)] // Find it's pair
+                if (holder[holder.length - 1] === openPair) { // Check if that pair is the last element in the array
+                    holder.splice(-1, 1) // If so, remove it
+                } else { // If it's not
+                    holder.push(letter)
+                    break // Exit loop
+                }
+            }
+        }
+        return console.log((holder.length === 0)) // Return true if length is 0, otherwise false
+    }
+    check('[[{asd}]]') // true
 
     return (
         <>
