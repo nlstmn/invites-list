@@ -120,6 +120,21 @@ export function PartTwo() {
     console.log(brackets('[1+1]+(2*2)-{3/3}')); // true
     console.log(brackets('(({[(((1)-2)+3)-3]/3}-3)')); // false
 
+    /* 4 - Check if property exists in array */
+    let targetObject: Array<any> = [];
+    let propertyName: any;
+    let result = targetObject.hasOwnProperty(propertyName); // 1st
+
+    // 2nd
+    let personn = {
+        firstName: 'John',
+        lastName: 'Doe'
+    };
+    let resultt = 'firstName' in person;
+    console.log(resultt); // true
+    resultt = 'age' in person;
+    console.log(resultt); // false
+
     return (
         <>
             <div>2nd Script</div>
