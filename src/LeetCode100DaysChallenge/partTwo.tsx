@@ -135,6 +135,14 @@ export function PartTwo() {
     resultt = 'age' in person;
     console.log(resultt); // false
 
+    // 3rd
+    let personnn = {
+        firstName: 'John',
+        lastName: 'Doe'
+    };
+    let resulttt = personnn.firstName !== undefined;
+    console.log(result); // true
+
     return (
         <>
             <div>2nd Script</div>
