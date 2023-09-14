@@ -143,6 +143,12 @@ export function PartTwo() {
     let resulttt = personnn.firstName !== undefined;
     console.log(result); // true
 
+    /* 5 - What's the difference between addEventListener and onClick? */
+    // onClick works in all browsers, addEventListener does not work in older versions.
+    // addEventListener can add multiple events.
+    // addEventListener can take a third argument which can stop the event propagation.
+    // onClick can be added as an HTML attribute, addEventListener can only be added within <script> elements.
+
     return (
         <>
             <div>2nd Script</div>
