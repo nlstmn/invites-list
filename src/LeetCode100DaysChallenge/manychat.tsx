@@ -30,6 +30,10 @@ export function Manychat() {
                 queue++; // Moving to next index
 
                 const url = urls[index];
+                console.log("inProgress => ", inProgress)
+                console.log("inProgress.has(url) => ", inProgress.has(url))
+                console.log("index => ", index)
+                console.log("queue => ", queue)
                 if (!inProgress.has(url)) { // Check if the URL is not in the in-progress set (avoiding duplicates)
                     inProgress.add(url);
                     await fetchData(url, index);
