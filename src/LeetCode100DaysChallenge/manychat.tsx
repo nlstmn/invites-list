@@ -7,6 +7,56 @@ export function Manychat() {
     Must return an array of results in the same order as same as request URL's.
     You shouldn't do repeated requests to the same addresses. */
 
+    // Write the skeleton
+
+    const fetchAll = async (urls: Array<string>, limit: number) => {
+        let results = urls
+        let resultsInProgress = new Set();
+        let queue = 0;
+
+        const fetchData = async (url: string, index: number) => {
+
+        }
+
+        const processQueue = async (urls: Array<string>, limit: number) => {
+            while (queue < limit) {
+                let index = queue;
+                queue++;
+                const url = urls[index];
+                if (!resultsInProgress.has(url)) {
+                    resultsInProgress.add(url)
+                    await fetchData(url, index)
+                }
+            }
+        }
+
+        return results;
+    }
+
+    let urls = [
+        "sfsf",
+        "zsefzsf",
+        "jfnzdkj"
+    ]
+
+    fetchAll(urls, 3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const fetchAll1 = async (urls: string[], limit: number = 5) => {
         const results = new Array(urls.length);
         const inProgress = new Set(); // Ensuring that there are no duplicates
