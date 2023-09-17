@@ -9,7 +9,37 @@ export function Manychat() {
 
     // Write the skeleton
 
-    
+    const fetchAll = async (urls: Array<string>, limit: number) => {
+        let results = urls
+        let resultsInProgress = new Set();
+        let queue = 0;
+
+        const fetchData = async (url: string, index: number) => {
+
+        }
+
+        const processQueue = async (urls: Array<string>, limit: number) => {
+            while (queue < limit) {
+                let index = queue;
+                queue++;
+                const url = urls[index];
+                if (!resultsInProgress.has(url)) {
+                    resultsInProgress.add(url)
+                    await fetchData(url, index)
+                }
+            }
+        }
+
+        return results;
+    }
+
+    let urls = [
+        "sfsf",
+        "zsefzsf",
+        "jfnzdkj"
+    ]
+
+    fetchAll(urls, 3)
 
 
 
