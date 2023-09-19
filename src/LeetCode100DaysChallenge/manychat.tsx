@@ -10,12 +10,22 @@ export function Manychat() {
     // Write the skeleton
 
     const fetchAll = async (urls: Array<string>, limit: number) => {
-        const fetchData = () => {
+        let res = new Set()
+        let queue = 0
+        const fetchData = (url: string, index: number) => {
 
         }
 
-        const processQueue = () => {
-
+        const processQueue = async () => {
+            while (queue < urls.length) {
+                let index = queue;
+                let url = urls[index];
+                queue++;
+                if (!res.has(url)) {
+                    res.add(url);
+                    await fetchData(url, index)
+                }
+            }
         }
 
         await Promise.all(urls)
@@ -72,12 +82,7 @@ export function Manychat() {
             while (queue < urls.length && inProgress.size < limit) {
                 const index = queue;
                 queue++; // Moving to next index
-
                 const url = urls[index];
-                console.log("inProgress => ", inProgress)
-                console.log("inProgress.has(url) => ", inProgress.has(url))
-                console.log("index => ", index)
-                console.log("queue => ", queue)
                 if (!inProgress.has(url)) { // Check if the URL is not in the in-progress set (avoiding duplicates)
                     inProgress.add(url);
                     await fetchData(url, index);
