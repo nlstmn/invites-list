@@ -9,7 +9,31 @@ export function Manychat() {
 
     // Write the skeleton
 
-    
+    const fetchAll = async (urls: Array<string>, limit: number) => {
+        const fetchData = () => {
+
+        }
+
+        const processQueue = () => {
+
+        }
+
+        await Promise.all(urls)
+
+        return null;
+    }
+
+    let urls = [
+        "efasef",
+        "sfsdf",
+        "sdfdf"
+    ]
+
+    fetchAll(urls, 3).then((results: any) => {
+        console.log(results)
+    }).catch((error) => {
+        console.log(error)
+    })
 
 
 
