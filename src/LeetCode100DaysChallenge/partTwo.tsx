@@ -149,6 +149,19 @@ export function PartTwo() {
     // addEventListener can take a third argument which can stop the event propagation.
     // onClick can be added as an HTML attribute, addEventListener can only be added within <script> elements.
 
+    /* 6 - Can the type be inherited in TS? */
+    // No, but we can use Intersection Types:
+    type Animal = { name: string; age: number };
+    type Bird = { canFly: boolean };
+
+    type BirdWithInfo = Animal & Bird;
+
+    const bird: BirdWithInfo = {
+        name: "Eagle",
+        age: 5,
+        canFly: true,
+    };
+
     return (
         <>
             <div>2nd Script</div>
