@@ -4,6 +4,7 @@ import { Invites } from "./Invites";
 import { LeetCode100DaysChallenge } from "./LeetCode100DaysChallenge"
 import { PartTwo } from "./LeetCode100DaysChallenge/partTwo"
 import { Manychat } from "./LeetCode100DaysChallenge/manychat"
+import { VirtualScrolling } from "./LeetCode100DaysChallenge/virtualScrolling"
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -48,6 +49,9 @@ export class Root extends Component<{}, State> {
                 <li>
                   <Link to="/manychat">Manychat</Link>
                 </li>
+                <li>
+                  <Link to="/virtualscrolling">Virtual Scrolling</Link>
+                </li>
               </ul>
             </nav>
 
@@ -57,6 +61,7 @@ export class Root extends Component<{}, State> {
               <Route path="/" element={<Button variant="contained" onClick={() => this.toggle(true)}>Open list</Button>}>
               </Route>
               <Route path="/manychat" element={<Manychat />} />
+              <Route path="/virtualscrolling" element={<VirtualScrolling />} />
             </Routes>
 
             {/*<Modal opened={this.state.opened} onClose={() => this.toggle(false)}>
