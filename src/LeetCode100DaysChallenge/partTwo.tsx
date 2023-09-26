@@ -1,4 +1,5 @@
 import React, { FC, useState, useCallback, useEffect, useRef } from "react";
+import classNames from "classnames";
 
 export function PartTwo() {
 
@@ -162,8 +163,18 @@ export function PartTwo() {
         canFly: true,
     };
 
+    /* 5 - Classnames (Popupsmart Turkish Company Interview Question) */
+    const isActive = true;
+    const isDisabled = false;
+
+    const buttonClasses = classNames("button", {
+        "active": isActive,
+        "disabled": isDisabled,
+    });
+
     return (
         <>
+            <button className={buttonClasses}></button>
             <div>2nd Script</div>
         </>
     );
