@@ -1,18 +1,7 @@
-import React, { FC, useState, useCallback, useEffect, useRef } from "react";
+import React from "react";
 import { data } from "./dataVS";
 
-(function () {
-    let str = "Good evening"
-    console.log(str);
-})();
-
 export function VirtualScrolling() {
-
-    /* 1 - Generics */
-    const addUID = (obj: object) => {
-        let uid = Math.floor(Math.random() * 100);
-        return { ...obj, uid };
-    }
 
     return (
         <>
@@ -23,7 +12,7 @@ export function VirtualScrolling() {
                         data.map((row: any) =>
                             <tr key={row[0]}>
                                 {
-                                    row.map((col: any) =>
+                                    Object.values(row).map((col: any) =>
                                         <td key={col} style={{ padding: 8, border: "1px solid #ccc" }}>
                                             {col}
                                         </td>)
