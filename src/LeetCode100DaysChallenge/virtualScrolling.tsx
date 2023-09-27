@@ -1,4 +1,10 @@
 import React, { FC, useState, useCallback, useEffect, useRef } from "react";
+import { data } from "./dataVS";
+
+(function () {
+    let str = "Good evening"
+    console.log(str);
+})();
 
 export function VirtualScrolling() {
 
@@ -11,6 +17,22 @@ export function VirtualScrolling() {
     return (
         <>
             <div>Virtual Scrolling</div>
+            <table style={{ borderCollapse: "collapse" }}>
+                <tbody>
+                    {
+                        data.map((row: any) =>
+                            <tr key={row[0]}>
+                                {
+                                    row.map((col: any) =>
+                                        <td key={col} style={{ padding: 8, border: "1px solid #ccc" }}>
+                                            {col}
+                                        </td>)
+                                }
+                                <td>ggg</td>
+                            </tr>)
+                    }
+                </tbody>
+            </table>
         </>
     );
 }
