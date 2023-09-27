@@ -3,15 +3,15 @@ import { data } from "./dataVS";
 
 export function VirtualScrolling() {
     const [scrollTop, setScrollTop] = useState(0)
+    const rowHeight = 36;
 
     const limit = 20;
-    const visibleData = data.slice(0, limit);
-    const rowHeight = 36;
+    const visibleData = data.slice(Math.floor(scrollTop / rowHeight), limit);
 
     return (
         <>
             <div>Virtual Scrolling - {scrollTop}px</div>
-            <div onScroll={e => setScrollTop(e.currentTarget.scrollTop)} style={{ height: 500, overflow: "auto" }}>
+            <div onScroll={e => setScrollTop((e.currentTarget.scrollTop + rowHeight) - rowHeight)} style={{ height: 500, overflow: "auto" }}>
                 <table style={{ borderCollapse: "collapse" }}>
                     <tbody>
                         {
