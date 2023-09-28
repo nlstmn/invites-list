@@ -8,13 +8,16 @@ export function VirtualScrolling() {
     const limit = 20;
     const startNode = Math.floor(scrollTop / rowHeight)
     const visibleData = data.slice(startNode, startNode + limit);
+    const startRowHeight = scrollTop + rowHeight
+    const endRowHeight = data.length * rowHeight - startRowHeight
 
     return (
         <>
             <div>Virtual Scrolling - {scrollTop}px</div>
-            <div onScroll={e => setScrollTop((e.currentTarget.scrollTop + rowHeight) - rowHeight)} style={{ height: 500, overflow: "auto" }}>
+            <div onScroll={e => setScrollTop(e.currentTarget.scrollTop)} style={{ height: 500, overflow: "auto" }}>
                 <table style={{ borderCollapse: "collapse" }}>
                     <tbody>
+                        <tr style={{ height: startRowHeight }}></tr>
                         {
                             visibleData.map((row: any) =>
                                 <tr key={row[0]} style={{ height: rowHeight }}>
@@ -26,6 +29,7 @@ export function VirtualScrolling() {
                                     }
                                 </tr>)
                         }
+                        <tr style={{ height: endRowHeight }}></tr>
                     </tbody>
                 </table>
             </div>
