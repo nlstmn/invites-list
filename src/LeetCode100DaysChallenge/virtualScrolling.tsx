@@ -6,7 +6,8 @@ export function VirtualScrolling() {
     const rowHeight = 36;
 
     const limit = 20;
-    const visibleData = data.slice(Math.floor(scrollTop / rowHeight), limit);
+    const startNode = Math.floor(scrollTop / rowHeight)
+    const visibleData = data.slice(startNode, startNode + limit);
 
     return (
         <>
