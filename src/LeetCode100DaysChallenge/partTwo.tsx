@@ -193,6 +193,11 @@ export function PartTwo() {
     eaning they have the same rights and abilities as other entities in the language.
     Specifically, in JS, functions are considered first-class citizens. */
 
+    /* 8 - Functional programming is a paradigm of building computer programs using
+    expressions and functions without mutating state and data. It is a style of programming that
+    emphasizes immutability, pure functions, and the use of higher-order functions.
+    JavaScript supports functional programming and provides features that make it well-suited for this paradigm.*/
+
     return (
         <>
             <button className={buttonClasses}></button>
