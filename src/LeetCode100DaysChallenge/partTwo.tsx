@@ -207,6 +207,9 @@ export function PartTwo() {
     // Throws error as it is readonly:
     // ourReadonlyTuple.push('Coding God took a day off');
 
+    /* 13 - What's the sequence of rendering in JS - animation, promise, setTimeout? */
+    // Animations, Promises, Settimeout
+
     return (
         <>
             <button className={buttonClasses}></button>
