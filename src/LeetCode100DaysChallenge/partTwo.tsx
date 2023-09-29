@@ -188,6 +188,11 @@ export function PartTwo() {
         lastName?: string
     }
 
+    /* 7 - In JS and TS, a "first-class citizen" refers to a language feature
+    that treats entities (such as functions and objects) as first-class citizens, 
+    eaning they have the same rights and abilities as other entities in the language.
+    Specifically, in JS, functions are considered first-class citizens. */
+
     return (
         <>
             <button className={buttonClasses}></button>
