@@ -121,7 +121,7 @@ export function PartTwo() {
     console.log(brackets('[1+1]+(2*2)-{3/3}')); // true
     console.log(brackets('(({[(((1)-2)+3)-3]/3}-3)')); // false
 
-    /* 4 - Check if property exists in array */
+    /* 5 - Check if property exists in array */
     let targetObject: Array<any> = [];
     let propertyName: any;
     let result = targetObject.hasOwnProperty(propertyName); // 1st
@@ -144,13 +144,13 @@ export function PartTwo() {
     let resulttt = personnn.firstName !== undefined;
     console.log(result); // true
 
-    /* 5 - What's the difference between addEventListener and onClick? */
+    /* 6 - What's the difference between addEventListener and onClick? */
     // onClick works in all browsers, addEventListener does not work in older versions.
     // addEventListener can add multiple events.
     // addEventListener can take a third argument which can stop the event propagation.
     // onClick can be added as an HTML attribute, addEventListener can only be added within <script> elements.
 
-    /* 6 - Can the type be inherited in TS? */
+    /* 7 - Can the type be inherited in TS? */
     // No, but we can use Intersection Types OR extend it (it's not here):
     type Animal = { name: string; age: number };
     type Bird = { canFly: boolean };
@@ -163,7 +163,7 @@ export function PartTwo() {
         canFly: true,
     };
 
-    /* 5 - Classnames (Popupsmart Turkish Company Interview Question) */
+    /* 8 - Classnames (Popupsmart Turkish Company Interview Question) */
     const isActive = true;
     const isDisabled = false;
 
@@ -172,7 +172,7 @@ export function PartTwo() {
         "disabled": isDisabled,
     });
 
-    /* 6 - TypeScript Partial */
+    /* 9 - TypeScript Partial */
     type Userr = {
         firstName: string,
         lastName: string
@@ -188,15 +188,24 @@ export function PartTwo() {
         lastName?: string
     }
 
-    /* 7 - In JS and TS, a "first-class citizen" refers to a language feature
+    /* 10 - In JS and TS, a "first-class citizen" refers to a language feature
     that treats entities (such as functions and objects) as first-class citizens, 
     eaning they have the same rights and abilities as other entities in the language.
     Specifically, in JS, functions are considered first-class citizens. */
 
-    /* 8 - Functional programming is a paradigm of building computer programs using
+    /* 11 - Functional programming is a paradigm of building computer programs using
     expressions and functions without mutating state and data. It is a style of programming that
     emphasizes immutability, pure functions, and the use of higher-order functions.
     JavaScript supports functional programming and provides features that make it well-suited for this paradigm.*/
+
+    /* 12 - TypeScript Tuple */
+    let ourTuple: [number, boolean, string];
+    ourTuple = [5, false, 'Coding God was here'];
+
+    // Readonly tuple
+    const ourReadonlyTuple: readonly [number, boolean, string] = [5, true, 'The Real Coding God'];
+    // Throws error as it is readonly:
+    // ourReadonlyTuple.push('Coding God took a day off');
 
     return (
         <>
