@@ -151,7 +151,7 @@ export function PartTwo() {
     // onClick can be added as an HTML attribute, addEventListener can only be added within <script> elements.
 
     /* 6 - Can the type be inherited in TS? */
-    // No, but we can use Intersection Types:
+    // No, but we can use Intersection Types OR extend it (it's not here):
     type Animal = { name: string; age: number };
     type Bird = { canFly: boolean };
 
@@ -171,6 +171,22 @@ export function PartTwo() {
         "active": isActive,
         "disabled": isDisabled,
     });
+
+    /* 6 - TypeScript Partial */
+    type Userr = {
+        firstName: string,
+        lastName: string
+    }
+
+    let firstUser: Partial<Userr> = {
+        firstName: "John"
+    }
+
+    // It's literally same as making it like this:
+    type Userrr = {
+        firstName?: string,
+        lastName?: string
+    }
 
     return (
         <>
