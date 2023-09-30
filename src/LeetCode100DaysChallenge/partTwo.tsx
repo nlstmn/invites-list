@@ -210,6 +210,19 @@ export function PartTwo() {
     /* 13 - What's the sequence of rendering in JS - animation, promise, setTimeout? */
     // Animations, Promises, Settimeout
 
+    /* 14 - Operators ?? and ??= */
+    const defaultValue = 'Hello, World!';
+    const myValue = null ?? defaultValue; // Nullish Coalescing Operator: checks for "nullish" (null, undefined) values specifically
+    console.log(myValue);
+
+    let existingValue = 'I already have a value';
+    existingValue ??= 'I am the new value'; // Nullish Assignment Operator
+    console.log(existingValue); // Output: 'I already have a value'
+
+    let nullValue = null;
+    nullValue ??= 'I am the new value';
+    console.log(nullValue); // Output: 'I am the new value'
+
     return (
         <>
             <button className={buttonClasses}></button>
