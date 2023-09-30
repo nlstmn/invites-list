@@ -5,6 +5,7 @@ import { LeetCode100DaysChallenge } from "./LeetCode100DaysChallenge"
 import { PartTwo } from "./LeetCode100DaysChallenge/partTwo"
 import { Manychat } from "./LeetCode100DaysChallenge/manychat"
 import { VirtualScrolling } from "./LeetCode100DaysChallenge/virtualScrolling"
+import { ReactQuery } from "./LeetCode100DaysChallenge/reactQuery"
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
@@ -52,6 +53,9 @@ export class Root extends Component<{}, State> {
                 <li>
                   <Link to="/virtualscrolling">Virtual Scrolling</Link>
                 </li>
+                <li>
+                  <Link to="/rquery">Virtual Scrolling</Link>
+                </li>
               </ul>
             </nav>
 
@@ -62,6 +66,7 @@ export class Root extends Component<{}, State> {
               </Route>
               <Route path="/manychat" element={<Manychat />} />
               <Route path="/virtualscrolling" element={<VirtualScrolling />} />
+              <Route path="/rquery" element={<ReactQuery />} />
             </Routes>
 
             {/*<Modal opened={this.state.opened} onClose={() => this.toggle(false)}>
