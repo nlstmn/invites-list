@@ -19,10 +19,30 @@ export function ReactQuery() {
     }
 
     /* 1 - Query for fetching data instead of useEffect hook */
-    const { data, isLoading } = useQuery("myData", fetchDataFunc);
+    /* const { data, isLoading } = useQuery("myData", fetchDataFunc);
 
     if (isLoading) {
         return <h2>Loading...</h2>
+    } */
+
+    /* 2 - Same query, built-in retry and error handling */
+    const { data, error, isError, isLoading, retry } = useQuery(
+        "myData",
+        fetchDataFunc,
+        { retry: 3 }
+    );
+
+    if (isLoading) {
+        return <h2>Loading...</h2>
+    }
+
+    if (isError) {
+        return (
+            <div>
+                <p>Error: {error.message}</p>
+                <button onClick={retry}>Error: {error.message}</p>
+            </div>
+        )
     }
 
     return (
