@@ -26,7 +26,7 @@ export function ReactQuery() {
     } */
 
     /* 2 - Same query, built-in retry and error handling */
-    const { data, error, isError, isLoading, retry } = useQuery(
+    const { data, error, isError, isLoading } = useQuery(
         "myData",
         fetchDataFunc,
         { retry: 3 }
@@ -39,8 +39,8 @@ export function ReactQuery() {
     if (isError) {
         return (
             <div>
-                <p>Error: {error.message}</p>
-                <button onClick={retry}>Error: {error.message}</p>
+                <p>Error: {(error as Error).message}</p>
+                <button onClick={retry}>Error: {(error as Error).message}</p>
             </div>
         )
     }
