@@ -26,7 +26,7 @@ export function ReactQuery() {
     } */
 
     /* 2 - Same query, built-in retry and error handling */
-    const { data, error, isError, isLoading } = useQuery(
+    const { error, isError, isLoading } = useQuery(
         "myData",
         fetchDataFunc,
         { retry: 3 }
@@ -49,6 +49,13 @@ export function ReactQuery() {
             </div>
         )
     }
+
+    /* 3 - Same query, real time updates */
+    const { data } = useQuery(
+        "myData",
+        fetchDataFunc,
+        { refetchInterval: 2000 } // Refresh data every 2 seconds
+    );
 
     return (
         <>
