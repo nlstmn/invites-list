@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "react-query"; // Automatic caching, no need of manual data storage
+import { useQuery, useQueryClient } from "react-query"; // Automatic caching, no need of manual data storage
 
 export function ReactQuery() {
 
@@ -32,6 +32,11 @@ export function ReactQuery() {
         { retry: 3 }
     );
 
+    const queryClient = useQueryClient();
+    const retryQuery = () => {
+        queryClient.invalidateQueries('myData'); // Retry the query using queryClient
+    };
+
     if (isLoading) {
         return <h2>Loading...</h2>
     }
@@ -40,7 +45,7 @@ export function ReactQuery() {
         return (
             <div>
                 <p>Error: {(error as Error).message}</p>
-                <button onClick={retry}>Error: {(error as Error).message}</p>
+                <button onClick={retryQuery}>Error: {(error as Error).message}</button>
             </div>
         )
     }
