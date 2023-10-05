@@ -15,16 +15,17 @@ const MyPortalComponent = ({ children }: any) => {
         // Handle the case where 'portal-root' element is not found
         return null; // or some fallback JSX
     }
+    console.log('dfbsd')
     return ReactDOM.createPortal(children, portalRoot);
 };
 
 export function ReactPortal() {
-
-
-
     return (
         <>
             <div>React Portal</div>
+            <MyPortalComponent>
+                <div>Content rendered via portal</div>
+            </MyPortalComponent>
         </>
     );
 }
