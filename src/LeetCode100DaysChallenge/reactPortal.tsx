@@ -1,6 +1,12 @@
 import React from "react";
-import { useQuery, useQueryClient } from "react-query";
 import ReactDOM from 'react-dom';
+
+/* A portal refers to a feature that allows you to render a component's
+children into a different DOM (Document Object Model) location, typically
+outside of the parent component's hierarchy. Portals are useful for scenarios
+where you want to render content from one part of your React component tree
+into another part of the HTML structure, such as rendering a modal or a tooltip
+outside of the main application container. */
 
 // Creating a portal
 const MyPortalComponent = ({ children }: any) => {
