@@ -8,6 +8,8 @@ where you want to render content from one part of your React component tree
 into another part of the HTML structure, such as rendering a modal or a tooltip
 outside of the main application container. */
 
+// If you forgot, remember Modal with different CSS than App's (App can be 500px and that's it), parent relashionship is not lost
+
 // Creating a portal
 const MyPortalComponent = ({ children }: any) => {
     const portalRoot = document.getElementById('portal-root');
@@ -15,7 +17,6 @@ const MyPortalComponent = ({ children }: any) => {
         // Handle the case where 'portal-root' element is not found
         return null; // or some fallback JSX
     }
-    console.log('dfbsd')
     return ReactDOM.createPortal(children, portalRoot);
 };
 
