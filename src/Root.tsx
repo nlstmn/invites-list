@@ -7,6 +7,7 @@ import { Manychat } from "./LeetCode100DaysChallenge/manychat"
 import { VirtualScrolling } from "./LeetCode100DaysChallenge/virtualScrolling"
 import { ReactQuery } from "./LeetCode100DaysChallenge/reactQuery"
 import { ReactPortal } from "./LeetCode100DaysChallenge/reactPortal"
+import { PropsDynamic } from "./LeetCode100DaysChallenge/propsDynamic"
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
@@ -64,6 +65,9 @@ export class Root extends Component<{}, State> {
                   <li>
                     <Link to="/rportal">React Portal</Link>
                   </li>
+                  <li>
+                    <Link to="/propsdynamic">Rendering props for dynamic data fetching</Link>
+                  </li>
                 </ul>
               </nav>
 
@@ -76,6 +80,7 @@ export class Root extends Component<{}, State> {
                 <Route path="/virtualscrolling" element={<VirtualScrolling />} />
                 <Route path="/rquery" element={<ReactQuery />} />
                 <Route path="/rportal" element={<ReactPortal />} />
+                <Route path="/propsdynamic" element={<PropsDynamic />} />
               </Routes>
 
               {/*<Modal opened={this.state.opened} onClose={() => this.toggle(false)}>
