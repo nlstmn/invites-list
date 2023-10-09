@@ -8,14 +8,18 @@ function DataFetcher({ render }: any) {
     return render(data)
 }
 
-export default function PropsDynamic() {
+export function PropsDynamic() {
     return (
         <div>
             <h1>Data Fetching Example</h1>
             <DataFetcher
-            rednder={(data) => (
-
-            )}
+                render={(data: any) => (
+                    <div>
+                        {
+                            data ? <h1>Data here</h1> : <h1>No data</h1>
+                        }
+                    </div>
+                )}
             />
         </div>
     );
