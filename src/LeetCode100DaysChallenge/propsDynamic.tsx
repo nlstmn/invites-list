@@ -1,27 +1,22 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 
-class PropsDynamic fetchData extends Component {
-    state = {
-        data: null,
-        loading: null,
-        error: null
-    }
+function DataFetcher({ render }: any) {
+    const [data, setData] = useState(null)
+    useEffect(() => {
 
-    fetchData = async () => {
-        this.setState({ loading: true })
-        try {
-            const response = await fetch("https://nsfnsk.com")
-            const data = response.json();
-            this.setState({ data, loading: false })
-        } catch (error) {
-            this.setState({ error, loading: false })
-        }
-    }
+    }, [])
+    return render(data)
+}
 
-    render() {
-        const { data, loading, error } = this.state
-        return (
-            this.props.render(data, loading, error, this.fetchData)
-        );
-    }
+export default function PropsDynamic() {
+    return (
+        <div>
+            <h1>Data Fetching Example</h1>
+            <DataFetcher
+            rednder={(data) => (
+
+            )}
+            />
+        </div>
+    );
 }
