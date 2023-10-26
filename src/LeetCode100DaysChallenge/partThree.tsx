@@ -36,6 +36,11 @@ export function PartThree() {
     data.age = 3000;
     console.log(data);
 
+    /* 5 - Quick conversion to number */
+    const smth = "6";
+    const num = +smth; // Called Unary operator, but better to use parseInt - it's strict
+    console.log(typeof (num))
+
     return (
         <>
             <div>3rd Script</div>
