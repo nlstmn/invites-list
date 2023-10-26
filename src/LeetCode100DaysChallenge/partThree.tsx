@@ -29,6 +29,13 @@ export function PartThree() {
         console.log(e.target);
     });
 
+    /* 4 - Restricting new properties on objects */
+    const data = { name: "Liana", age: 28 };
+    Object.seal(data);
+    // data.hobby = "Walking"; // Will throw error because of .seal()
+    data.age = 3000;
+    console.log(data);
+
     return (
         <>
             <div>3rd Script</div>
