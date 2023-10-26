@@ -8,7 +8,6 @@ export function PartThree() {
     // new Array(last + 1): creates a new array with a length of last + 1
     // keys(): to get an iterator over the indices of the array, starting from 0
     // [...iterable]: to convert the iterable into an actual array
-    console.log(years)
 
     /* 2 - Add object properties conditionally */
     const h = true;
@@ -20,7 +19,15 @@ export function PartThree() {
         })
     };
 
-    console.log('drfzj ', myData)
+    /* 3 - Destructuring function parameters */
+    const button = document.querySelector('button'); // This is Vanilla JS so we can't see anything here in React
+    button?.addEventListener("click", ({ target }) => {
+        console.log(target)
+    })
+    // Without descructuring it will be this:
+    button?.addEventListener("click", (e) => {
+        console.log(e.target);
+    });
 
     return (
         <>
