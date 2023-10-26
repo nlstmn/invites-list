@@ -8,6 +8,7 @@ import { VirtualScrolling } from "./LeetCode100DaysChallenge/virtualScrolling"
 import { ReactQuery } from "./LeetCode100DaysChallenge/reactQuery"
 import { ReactPortal } from "./LeetCode100DaysChallenge/reactPortal"
 import { PropsDynamic } from "./LeetCode100DaysChallenge/propsDynamic"
+import { PartThree } from "./LeetCode100DaysChallenge/partThree"
 import Button from '@mui/material/Button';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
@@ -54,6 +55,9 @@ export class Root extends Component<{}, State> {
                     <Link to="/part-two">Part Two</Link>
                   </li>
                   <li>
+                    <Link to="/part-three">Part Three</Link>
+                  </li>
+                  <li>
                     <Link to="/manychat">Manychat</Link>
                   </li>
                   <li>
@@ -74,6 +78,7 @@ export class Root extends Component<{}, State> {
               <Routes>
                 <Route path="/challenge" element={<LeetCode100DaysChallenge />} />
                 <Route path="/part-two" element={<PartTwo />} />
+                <Route path="/part-three" element={<PartThree />} />
                 <Route path="/" element={<Button variant="contained" onClick={() => this.toggle(true)}>Open list</Button>}>
                 </Route>
                 <Route path="/manychat" element={<Manychat />} />
