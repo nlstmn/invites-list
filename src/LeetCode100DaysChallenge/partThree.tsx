@@ -41,6 +41,32 @@ export function PartThree() {
     const num = +smth; // Called Unary operator, but better to use parseInt - it's strict
     console.log(typeof (num))
 
+    /* 6 - What will the console log out, how to fix it? */
+    const database = {
+        filterId: 'active',
+        users: [
+            {
+                id: 'active',
+                label: 'Active',
+            },
+            {
+                id: 'inactive',
+                label: 'Inactive',
+            },
+        ],
+        getUsers: function () {
+            return this.users.filter(function (user) {
+                /* return user.id === this.filterId */
+                // Problem is here: this keyword inside the filter function is not referring
+                // to the database object, causing the filter to not work correctly.
+                // To fix this, you can use an arrow function for the callback inside the filter function,
+                // which will preserve the value of this from the surrounding context:
+                // this.users.filter(user => user.id === this.filterId);
+            })
+        }
+    }
+    console.log(database.getUsers())
+
     return (
         <>
             <div>3rd Script</div>
