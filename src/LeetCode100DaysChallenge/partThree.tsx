@@ -67,6 +67,34 @@ export function PartThree() {
     }
     console.log(database.getUsers())
 
+    /* 7 - Event loop: what will the console log out? */
+    sleep(2000).then(() => {
+        console.log(0)
+    })
+    console.log(1)
+    setTimeout(() => {
+        console.log(2)
+    })
+    function sleep(ms: number) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms)
+        })
+    }
+    console.log(5)
+    function myPromise() {
+        abc().then((val) => {
+            console.log(val)
+            return myPromise() // Due to this recursiveness, it will be 1 5 6 6 6 6 6 6 6 6 ...
+        })
+    }
+    function abc() {
+        return new Promise((resolve) => {
+            resolve(6)
+        })
+    }
+
+    myPromise()
+
     return (
         <>
             <div>3rd Script</div>
