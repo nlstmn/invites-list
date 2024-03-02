@@ -92,8 +92,51 @@ export function PartThree() {
             resolve(6)
         })
     }
+    // myPromise()
 
-    myPromise()
+    /* 8 - What's wrong with this code? */
+    function getUsers() {
+        const users = [
+            {
+                filter: 'active',
+                name: 'A',
+            },
+            {
+                filter: 'Inactive',
+                name: 'A',
+            },
+        ]
+        const appliedFilters = ['active']
+        const result = []
+
+        for (let i = 0; i < users.length; i += 1) {
+            if (appliedFilters.includes(users[i].filter)) {
+                result.push(users[i])
+            }
+        }
+        return result
+    }
+
+    getUsers()
+    getUsers()
+    getUsers()
+    // And called many many times
+    /* Maybe .filter() instead of for loop? But the answer is:
+    вынести массивы users и appliedFilters за функцию getUsers.
+    При многократном вызове функции getUsers создаётся много массивов,
+    что влияет на размер выделяемой памяти для создания объектов в JS. */
+    // 1 more note: we could just memoize this function for called only once?
+    /* Yes, we can: таким образом мы сохраним массивы в лексическом окружении функции,
+    и они будут созданы всего один раз. Но можно обойтись и решением, когда массивы будут вынесены за функцию. */
+    function a() {
+        const users = []
+        const filters = []
+        return function b() { }
+    }
+    const fn = a()
+    fn()
+    fn()
+    fn()
 
     return (
         <>
